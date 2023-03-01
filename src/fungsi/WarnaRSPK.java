@@ -29,7 +29,7 @@ public class WarnaRSPK extends DefaultTableCellRenderer {
             component.setBackground(new Color(255,255,255));
         }
         if (table.getValueAt(row, kolom).toString().equals("Sudah Bayar")){
-            component.setBackground(new Color(0,118,189));
+            component.setBackground(new Color(51, 185, 255));
         }
         if (table.getValueAt(row, statrawat).toString().equals("Batal")){
             component.setBackground(new Color(211,84,0));

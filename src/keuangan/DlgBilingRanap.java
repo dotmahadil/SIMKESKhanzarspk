@@ -3792,6 +3792,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                             case "Kwitansi Piutang":
                                   i=5;
                                   break;
+                            
                       }
                 }catch(Exception e){
                       i=0;
@@ -3832,7 +3833,8 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                                     "on kamar_inap.no_rawat=reg_periksa.no_rawat where reg_periksa.kd_pj='"+kd_pj+"' and kamar_inap.tgl_keluar like '%"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,7)+"%'")+"/RI/"+kd_pj+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(5,7)+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,4)+"&usere="+koneksiDB.USERHYBRIDWEB()+"&passwordte="+koneksiDB.PASHYBRIDWEB());
                         }else{
                             JOptionPane.showMessageDialog(null,"Nilai Piutang masih kosong...!!!");
-                        }                          
+                        } 
+                        
                     }
                     this.setCursor(Cursor.getDefaultCursor());
                 }
