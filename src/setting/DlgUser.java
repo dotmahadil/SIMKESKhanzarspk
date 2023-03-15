@@ -224,7 +224,8 @@ public class DlgUser extends javax.swing.JDialog {
                 "[L]Kirim Procedure Satu Sehat","[J]Operasi Per Bulan","[M]Time-Out Sebelum Insisi","[M]Sign-Out Sebelum Menutup Luka","[F]Barang Dapur","[F]Stok Opname Dapur",
                 "[L]Mapping Vaksin Satu Sehat","[F]Suplier Dapur","[L]Kirim Imunisasi Satu Sehat","[M]Check List Post Operasi","[F]Pengadaan Barang Dapur","[F]Stok Keluar Dapur",
                 "[F]Riwayat Barang Dapur","[F]Permintaan Barang Dapur","[M]Rekonsiliasi Obat","[F]Biaya Pengadaan Dapur","[F]Rekap Pengadaan Dapur","[G]Limbah Cair B3 Medis",
-                "[O]Limbah B3 Cair Per Tanggal","[O]Limbah B3 Cair Per Bulan"
+                "[O]Limbah B3 Cair Per Tanggal","[O]Limbah B3 Cair Per Bulan","[I]Rekap Biaya Registrasi","[M]Konfirmasi Rekonsiliasi Obat","[L]Kirim Clinical Impression Satu Sehat",
+                "[M]Penilaian Pasien Terminal","[P]Persetujuan Rawat Inap","[M]Monitoring Reaksi Tranfusi","[M]Penilaian Korban Kekerasan"
         };
         
         tabMode=new DefaultTableModel(null,row){
@@ -477,6 +478,8 @@ public class DlgUser extends javax.swing.JDialog {
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
+                java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
+                java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class
              };
              @Override
@@ -490,7 +493,7 @@ public class DlgUser extends javax.swing.JDialog {
         tbUser.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbUser.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 925;i++) {
+        for (i = 0; i < 932;i++) {
             TableColumn column = tbUser.getColumnModel().getColumn(i);
             switch (i) {
                 case 0:
@@ -2719,6 +2722,27 @@ public class DlgUser extends javax.swing.JDialog {
                 case 924:
                     column.setPreferredWidth(146);
                     break;
+                case 925:
+                    column.setPreferredWidth(130);
+                    break;
+                case 926:
+                    column.setPreferredWidth(163);
+                    break;
+                case 927:
+                    column.setPreferredWidth(198);
+                    break;
+                case 928:
+                    column.setPreferredWidth(149);
+                    break;
+                case 929:
+                    column.setPreferredWidth(138);
+                    break;
+                case 930:
+                    column.setPreferredWidth(153);
+                    break;
+                case 931:
+                    column.setPreferredWidth(158);
+                    break;
                 default:
                     column.setPreferredWidth(135);
                     break;
@@ -3220,7 +3244,7 @@ public class DlgUser extends javax.swing.JDialog {
                     "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false',"+
                     "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false',"+
                     "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false',"+
-                    "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false'","User")==true){
+                    "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false'","User")==true){
                 tampil();
                 emptTeks();
             }            
@@ -4187,7 +4211,14 @@ public class DlgUser extends javax.swing.JDialog {
                     "rekap_pengadaan_dapur='"+tbUser.getValueAt(i,921).toString()+"',"+
                     "kesling_limbah_b3medis_cair='"+tbUser.getValueAt(i,922).toString()+"',"+
                     "grafik_limbahb3cair_pertanggal='"+tbUser.getValueAt(i,923).toString()+"',"+
-                    "grafik_limbahb3cair_perbulan='"+tbUser.getValueAt(i,924).toString()+"'");
+                    "grafik_limbahb3cair_perbulan='"+tbUser.getValueAt(i,924).toString()+"',"+
+                    "rekap_biaya_registrasi='"+tbUser.getValueAt(i,925).toString()+"',"+
+                    "konfirmasi_rekonsiliasi_obat='"+tbUser.getValueAt(i,926).toString()+"',"+
+                    "satu_sehat_kirim_clinicalimpression='"+tbUser.getValueAt(i,927).toString()+"',"+
+                    "penilaian_pasien_terminal='"+tbUser.getValueAt(i,928).toString()+"',"+
+                    "surat_persetujuan_rawat_inap='"+tbUser.getValueAt(i,929).toString()+"',"+
+                    "monitoring_reaksi_tranfusi='"+tbUser.getValueAt(i,930).toString()+"',"+
+                    "penilaian_korban_kekerasan='"+tbUser.getValueAt(i,931).toString()+"'");
             }            
             tampil();
             emptTeks();
@@ -4250,13 +4281,130 @@ public class DlgUser extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_TNmUserKeyPressed
 
+private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+            TKd.requestFocus();
+        }else if(tabMode.getRowCount()!=0){
+            Map<String, Object> param = new HashMap<>();    
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());   
+            Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
+            int row=tabMode.getRowCount();
+            for(i=0;i<row;i++){  
+                Sequel.menyimpan("temporary","'"+i+"','"+
+                                tabMode.getValueAt(i,0).toString()+"','"+
+                                tabMode.getValueAt(i,1).toString()+"','"+
+                                tabMode.getValueAt(i,3).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Data User"); 
+            }
+            Valid.MyReportqry("rptUser.jasper","report","::[ Data User ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
+        }
+        this.setCursor(Cursor.getDefaultCursor());
+}//GEN-LAST:event_BtnPrintActionPerformed
+
+private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPrintKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
+            BtnPrintActionPerformed(null);
+        }else{
+            Valid.pindah(evt, BtnHapus,BtnKeluar);
+        }
+}//GEN-LAST:event_BtnPrintKeyPressed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        tampil();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            BtnCariActionPerformed(null);
+        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
+            BtnCari.requestFocus();
+        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
+            BtnKeluar.requestFocus();
+        }else if(evt.getKeyCode()==KeyEvent.VK_UP){
+            tbUser.requestFocus();
+        }
+    }//GEN-LAST:event_TCariKeyPressed
+
+    private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
+        tampil();
+    }//GEN-LAST:event_BtnCariActionPerformed
+
+    private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+            BtnCariActionPerformed(null);
+        }else{
+            Valid.pindah(evt, TCari, BtnAll);
+        }
+    }//GEN-LAST:event_BtnCariKeyPressed
+
+    private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
+        TCari.setText("");
+        tampil();
+    }//GEN-LAST:event_BtnAllActionPerformed
+
+    private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+            TCari.setText("");
+            tampil();
+        }else{
+            Valid.pindah(evt, BtnCari, TKd);
+        }
+    }//GEN-LAST:event_BtnAllKeyPressed
+
+    private void BtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatalActionPerformed
+        emptTeks();
+    }//GEN-LAST:event_BtnBatalActionPerformed
+
+    private void BtnBatalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnBatalKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
+            emptTeks();
+        }else{Valid.pindah(evt, BtnSimpan, BtnHapus);}
+    }//GEN-LAST:event_BtnBatalKeyPressed
+
+    private void MnCopyHakAksesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCopyHakAksesActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data user...!!!!");
+            TCari.requestFocus();
+        }else if(TKd.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data user yang mau dicopy hak aksesnya...!!!");
+            tbUser.requestFocus();
+        }else{
+            copyhakakses="copy";
+            userdicopy=TKd.getText();
+            if(tbUser.getSelectedRow()!= -1){
+                barisdicopy=tbUser.getSelectedRow();
+            }
+            JOptionPane.showMessageDialog(null,"Silahkan pilih user tujuan..!!"); 
+        }
+    }//GEN-LAST:event_MnCopyHakAksesActionPerformed
+
+    private void MnSetUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSetUserActionPerformed
+        if(tbUser.getSelectedRow()!= -1){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            personal.isUser(TKd.getText(),TNmUser.getText(),TPass.getText());
+            personal.setSize(460,this.getHeight()-50);
+            personal.setLocationRelativeTo(internalFrame1);
+            personal.setAlwaysOnTop(false);
+            personal.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());   
+        }else{
+            JOptionPane.showMessageDialog(rootPane,"Silahkan pilih dulu nama user..!!");
+        }   
+    }//GEN-LAST:event_MnSetUserActionPerformed
+
     private void tbUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbUserMouseClicked
         if(tabMode.getRowCount()!=0){
             try {
                 getData();
             } catch (java.lang.NullPointerException e) {
             }
-            
+
             if(evt.getClickCount()==1){
                 if(copyhakakses.equals("copy")){
                     if(userdicopy.equals(TKd.getText())){
@@ -5193,8 +5341,15 @@ public class DlgUser extends javax.swing.JDialog {
                                         "rekap_pengadaan_dapur='"+tbUser.getValueAt(barisdicopy,921).toString()+"',"+
                                         "kesling_limbah_b3medis_cair='"+tbUser.getValueAt(barisdicopy,922).toString()+"',"+
                                         "grafik_limbahb3cair_pertanggal='"+tbUser.getValueAt(barisdicopy,923).toString()+"',"+
-                                        "grafik_limbahb3cair_perbulan='"+tbUser.getValueAt(barisdicopy,924).toString()+"'");
-                                }    
+                                        "grafik_limbahb3cair_perbulan='"+tbUser.getValueAt(barisdicopy,924).toString()+"',"+
+                                        "rekap_biaya_registrasi='"+tbUser.getValueAt(barisdicopy,925).toString()+"',"+
+                                        "konfirmasi_rekonsiliasi_obat='"+tbUser.getValueAt(barisdicopy,926).toString()+"',"+
+                                        "satu_sehat_kirim_clinicalimpression='"+tbUser.getValueAt(barisdicopy,927).toString()+"',"+
+                                        "penilaian_pasien_terminal='"+tbUser.getValueAt(barisdicopy,928).toString()+"',"+
+                                        "surat_persetujuan_rawat_inap='"+tbUser.getValueAt(barisdicopy,929).toString()+"',"+
+                                        "monitoring_reaksi_tranfusi='"+tbUser.getValueAt(barisdicopy,930).toString()+"',"+
+                                        "penilaian_korban_kekerasan='"+tbUser.getValueAt(barisdicopy,931).toString()+"'");
+                                }
                                 userdicopy="";
                                 copyhakakses="";
                                 barisdicopy=-1;
@@ -5213,7 +5368,7 @@ public class DlgUser extends javax.swing.JDialog {
                 }
             }
         }
-}//GEN-LAST:event_tbUserMouseClicked
+    }//GEN-LAST:event_tbUserMouseClicked
 
     private void tbUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbUserKeyPressed
         if(tabMode.getRowCount()!=0){
@@ -5230,129 +5385,12 @@ public class DlgUser extends javax.swing.JDialog {
                         }else{
                             tbUser.setValueAt(false,tbUser.getSelectedRow(),tbUser.getSelectedColumn());
                         }
-                        
+
                     }
                 }
             }
         }
-}//GEN-LAST:event_tbUserKeyPressed
-
-private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        if(tabMode.getRowCount()==0){
-            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
-            TKd.requestFocus();
-        }else if(tabMode.getRowCount()!=0){
-            Map<String, Object> param = new HashMap<>();    
-            param.put("namars",akses.getnamars());
-            param.put("alamatrs",akses.getalamatrs());
-            param.put("kotars",akses.getkabupatenrs());
-            param.put("propinsirs",akses.getpropinsirs());
-            param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());   
-            Sequel.queryu("delete from temporary where temp37='"+akses.getalamatip()+"'");
-            int row=tabMode.getRowCount();
-            for(i=0;i<row;i++){  
-                Sequel.menyimpan("temporary","'"+i+"','"+
-                                tabMode.getValueAt(i,0).toString()+"','"+
-                                tabMode.getValueAt(i,1).toString()+"','"+
-                                tabMode.getValueAt(i,3).toString()+"','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"+akses.getalamatip()+"'","Data User"); 
-            }
-            Valid.MyReportqry("rptUser.jasper","report","::[ Data User ]::","select * from temporary where temporary.temp37='"+akses.getalamatip()+"' order by temporary.no",param);
-        }
-        this.setCursor(Cursor.getDefaultCursor());
-}//GEN-LAST:event_BtnPrintActionPerformed
-
-private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPrintKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
-            BtnPrintActionPerformed(null);
-        }else{
-            Valid.pindah(evt, BtnHapus,BtnKeluar);
-        }
-}//GEN-LAST:event_BtnPrintKeyPressed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        tampil();
-    }//GEN-LAST:event_formWindowOpened
-
-    private void TCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TCariKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            BtnCariActionPerformed(null);
-        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_DOWN){
-            BtnCari.requestFocus();
-        }else if(evt.getKeyCode()==KeyEvent.VK_PAGE_UP){
-            BtnKeluar.requestFocus();
-        }else if(evt.getKeyCode()==KeyEvent.VK_UP){
-            tbUser.requestFocus();
-        }
-    }//GEN-LAST:event_TCariKeyPressed
-
-    private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-        tampil();
-    }//GEN-LAST:event_BtnCariActionPerformed
-
-    private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-            BtnCariActionPerformed(null);
-        }else{
-            Valid.pindah(evt, TCari, BtnAll);
-        }
-    }//GEN-LAST:event_BtnCariKeyPressed
-
-    private void BtnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAllActionPerformed
-        TCari.setText("");
-        tampil();
-    }//GEN-LAST:event_BtnAllActionPerformed
-
-    private void BtnAllKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnAllKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-            TCari.setText("");
-            tampil();
-        }else{
-            Valid.pindah(evt, BtnCari, TKd);
-        }
-    }//GEN-LAST:event_BtnAllKeyPressed
-
-    private void BtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatalActionPerformed
-        emptTeks();
-    }//GEN-LAST:event_BtnBatalActionPerformed
-
-    private void BtnBatalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnBatalKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_SPACE){
-            emptTeks();
-        }else{Valid.pindah(evt, BtnSimpan, BtnHapus);}
-    }//GEN-LAST:event_BtnBatalKeyPressed
-
-    private void MnCopyHakAksesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCopyHakAksesActionPerformed
-        if(tabMode.getRowCount()==0){
-            JOptionPane.showMessageDialog(null,"Maaf, data user...!!!!");
-            TCari.requestFocus();
-        }else if(TKd.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data user yang mau dicopy hak aksesnya...!!!");
-            tbUser.requestFocus();
-        }else{
-            copyhakakses="copy";
-            userdicopy=TKd.getText();
-            if(tbUser.getSelectedRow()!= -1){
-                barisdicopy=tbUser.getSelectedRow();
-            }
-            JOptionPane.showMessageDialog(null,"Silahkan pilih user tujuan..!!"); 
-        }
-    }//GEN-LAST:event_MnCopyHakAksesActionPerformed
-
-    private void MnSetUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSetUserActionPerformed
-        if(tbUser.getSelectedRow()!= -1){
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            personal.isUser(TKd.getText(),TNmUser.getText(),TPass.getText());
-            personal.setSize(460,this.getHeight()-50);
-            personal.setLocationRelativeTo(internalFrame1);
-            personal.setAlwaysOnTop(false);
-            personal.setVisible(true);
-            this.setCursor(Cursor.getDefaultCursor());   
-        }else{
-            JOptionPane.showMessageDialog(rootPane,"Silahkan pilih dulu nama user..!!");
-        }   
-    }//GEN-LAST:event_MnSetUserActionPerformed
+    }//GEN-LAST:event_tbUserKeyPressed
 
     /**
     * @param args the command line arguments
@@ -5577,7 +5615,9 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                 "user.satu_sehat_kirim_observationttv,user.signin_sebelum_anestesi,user.satu_sehat_kirim_procedure,user.operasi_per_bulan,user.timeout_sebelum_insisi,"+
                 "user.signout_sebelum_menutup_luka,user.dapur_barang,user.dapur_opname,user.satu_sehat_mapping_vaksin,user.dapur_suplier,user.satu_sehat_kirim_Immunization,"+
                 "user.checklist_post_operasi,user.dapur_pembelian,user.dapur_stok_keluar,user.dapur_riwayat_barang,user.permintaan_dapur,user.rekonsiliasi_obat,"+
-                "user.biaya_pengadaan_dapur,user.rekap_pengadaan_dapur,user.kesling_limbah_b3medis_cair,user.grafik_limbahb3cair_pertanggal,user.grafik_limbahb3cair_perbulan from user order by AES_DECRYPT(user.id_user,'nur')");
+                "user.biaya_pengadaan_dapur,user.rekap_pengadaan_dapur,user.kesling_limbah_b3medis_cair,user.grafik_limbahb3cair_pertanggal,user.grafik_limbahb3cair_perbulan,"+
+                "user.rekap_biaya_registrasi,user.konfirmasi_rekonsiliasi_obat,user.satu_sehat_kirim_clinicalimpression,user.penilaian_pasien_terminal,"+
+                "user.surat_persetujuan_rawat_inap,user.monitoring_reaksi_tranfusi,user.penilaian_korban_kekerasan from user order by AES_DECRYPT(user.id_user,'nur')");
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
@@ -6514,7 +6554,14 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                                rs.getBoolean("rekap_pengadaan_dapur"),
                                rs.getBoolean("kesling_limbah_b3medis_cair"),
                                rs.getBoolean("grafik_limbahb3cair_pertanggal"),
-                               rs.getBoolean("grafik_limbahb3cair_perbulan")
+                               rs.getBoolean("grafik_limbahb3cair_perbulan"),
+                               rs.getBoolean("rekap_biaya_registrasi"),
+                               rs.getBoolean("konfirmasi_rekonsiliasi_obat"),
+                               rs.getBoolean("satu_sehat_kirim_clinicalimpression"),
+                               rs.getBoolean("penilaian_pasien_terminal"),
+                               rs.getBoolean("surat_persetujuan_rawat_inap"),
+                               rs.getBoolean("monitoring_reaksi_tranfusi"),
+                               rs.getBoolean("penilaian_korban_kekerasan")
                             });
                         }   
                     } catch (Exception e) {
@@ -7440,7 +7487,14 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                            rs.getBoolean("rekap_pengadaan_dapur"),
                            rs.getBoolean("kesling_limbah_b3medis_cair"),
                            rs.getBoolean("grafik_limbahb3cair_pertanggal"),
-                           rs.getBoolean("grafik_limbahb3cair_perbulan")
+                           rs.getBoolean("grafik_limbahb3cair_perbulan"),
+                           rs.getBoolean("rekap_biaya_registrasi"),
+                           rs.getBoolean("konfirmasi_rekonsiliasi_obat"),
+                           rs.getBoolean("satu_sehat_kirim_clinicalimpression"),
+                           rs.getBoolean("penilaian_pasien_terminal"),
+                           rs.getBoolean("surat_persetujuan_rawat_inap"),
+                           rs.getBoolean("monitoring_reaksi_tranfusi"),
+                           rs.getBoolean("penilaian_korban_kekerasan")
                         });
                     }                                             
                  }
