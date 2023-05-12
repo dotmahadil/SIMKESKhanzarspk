@@ -19,7 +19,7 @@ public final class akses {
     private static PreparedStatement ps,ps2;
     private static ResultSet rs,rs2;
     
-    private static String kode="",kdbangsal="",alamatip="",namars="",alamatrs="",kabupatenrs="",propinsirs="",kontakrs="",emailrs="",form="",namauser=""; 
+    private static String kode="",kdbangsal="",alamatip="",namars="",alamatrs="",kabupatenrs="",propinsirs="",kontakrs="",emailrs="",form="",namauser="",kode_ppk=""; 
     private static int jml1=0,jml2=0,lebar=0,tinggi=0;
     private static boolean aktif=false,admin=false,user=false,vakum=false,aplikasi=false,penyakit=false,obat_penyakit=false,dokter=false,jadwal_praktek=false,petugas=false,pasien=false,registrasi=false,
             tindakan_ralan=false,kamar_inap=false,tindakan_ranap=false,operasi=false,rujukan_keluar=false,rujukan_masuk=false,beri_obat=false,
@@ -203,7 +203,9 @@ public final class akses {
             rekonsiliasi_obat=false,biaya_pengadaan_dapur=false,rekap_pengadaan_dapur=false,kesling_limbah_b3medis_cair=false,grafik_limbahb3cair_pertanggal=false,
             grafik_limbahb3cair_perbulan=false,rekap_biaya_registrasi=false,konfirmasi_rekonsiliasi_obat=false,satu_sehat_kirim_clinicalimpression=false,
             penilaian_pasien_terminal=false,surat_persetujuan_rawat_inap=false,monitoring_reaksi_tranfusi=false,penilaian_korban_kekerasan=false,
-            penilaian_lanjutan_resiko_jatuh_lansia=false,mpp_skrining=false;
+            penilaian_lanjutan_resiko_jatuh_lansia=false,mpp_skrining=false,penilaian_pasien_penyakit_menular=false,edukasi_pasien_keluarga_rj=false,pemantauan_pews_dewasa=false,
+            penilaian_tambahan_bunuh_diri=false,bpjs_antrean_pertanggal=false,penilaian_tambahan_perilaku_kekerasan=false,penilaian_tambahan_beresiko_melarikan_diri=false,
+            persetujuan_penundaan_pelayanan=false,sisa_diet_pasien=false;
     
     public static void setData(String user, String pass) {
         try {        
@@ -1157,6 +1159,15 @@ public final class akses {
                         akses.penilaian_korban_kekerasan=true;
                         akses.penilaian_lanjutan_resiko_jatuh_lansia=true;
                         akses.mpp_skrining=true;
+                        akses.penilaian_pasien_penyakit_menular=true;
+                        akses.edukasi_pasien_keluarga_rj=true;
+                        akses.pemantauan_pews_dewasa=true;
+                        akses.penilaian_tambahan_bunuh_diri=true;
+                        akses.bpjs_antrean_pertanggal=true;
+                        akses.penilaian_tambahan_perilaku_kekerasan=true;
+                        akses.penilaian_tambahan_beresiko_melarikan_diri=true;
+                        akses.persetujuan_penundaan_pelayanan=true;
+                        akses.sisa_diet_pasien=true;
                     }else if(rs2.getRow()>=1){   
                         rs2.beforeFirst();
                         rs2.next();
@@ -2094,6 +2105,15 @@ public final class akses {
                         akses.penilaian_korban_kekerasan=rs2.getBoolean("penilaian_korban_kekerasan");
                         akses.penilaian_lanjutan_resiko_jatuh_lansia=rs2.getBoolean("penilaian_lanjutan_resiko_jatuh_lansia");
                         akses.mpp_skrining=rs2.getBoolean("mpp_skrining");
+                        akses.penilaian_pasien_penyakit_menular=rs2.getBoolean("penilaian_pasien_penyakit_menular");
+                        akses.edukasi_pasien_keluarga_rj=rs2.getBoolean("edukasi_pasien_keluarga_rj");
+                        akses.pemantauan_pews_dewasa=rs2.getBoolean("pemantauan_pews_dewasa");
+                        akses.penilaian_tambahan_bunuh_diri=rs2.getBoolean("penilaian_tambahan_bunuh_diri");
+                        akses.bpjs_antrean_pertanggal=rs2.getBoolean("bpjs_antrean_pertanggal");
+                        akses.penilaian_tambahan_perilaku_kekerasan=rs2.getBoolean("penilaian_tambahan_perilaku_kekerasan");
+                        akses.penilaian_tambahan_beresiko_melarikan_diri=rs2.getBoolean("penilaian_tambahan_beresiko_melarikan_diri");
+                        akses.persetujuan_penundaan_pelayanan=rs2.getBoolean("persetujuan_penundaan_pelayanan");
+                        akses.sisa_diet_pasien=rs2.getBoolean("sisa_diet_pasien");
                     }else if((rs.getRow()==0)&&(rs2.getRow()==0)){
                         akses.kode="";                  
                         akses.penyakit= false;
@@ -3029,6 +3049,15 @@ public final class akses {
                         akses.penilaian_korban_kekerasan=false;
                         akses.penilaian_lanjutan_resiko_jatuh_lansia=false;
                         akses.mpp_skrining=false;
+                        akses.penilaian_pasien_penyakit_menular=false;
+                        akses.edukasi_pasien_keluarga_rj=false;
+                        akses.pemantauan_pews_dewasa=false;
+                        akses.penilaian_tambahan_bunuh_diri=false;
+                        akses.bpjs_antrean_pertanggal=false;
+                        akses.penilaian_tambahan_perilaku_kekerasan=false;
+                        akses.penilaian_tambahan_beresiko_melarikan_diri=false;
+                        akses.persetujuan_penundaan_pelayanan=false;
+                        akses.sisa_diet_pasien=false;
                     }
                 } catch (Exception e) {
                     System.out.println("Notifikasi : "+e);
@@ -3204,12 +3233,14 @@ public final class akses {
     public static void setpropinsirs(String propinsirs){akses.propinsirs=propinsirs;}
     public static void setkontakrs(String kontakrs){akses.kontakrs=kontakrs;}
     public static void setemailrs(String emailrs){akses.emailrs=emailrs;}
+    public static void setkodeppkbpjs(String kode_ppk){akses.kode_ppk=kode_ppk;}
     public static String getnamars(){return akses.namars;}
     public static String getalamatrs(){return akses.alamatrs;}
     public static String getkabupatenrs(){return akses.kabupatenrs;}
     public static String getpropinsirs(){return akses.propinsirs;}
     public static String getkontakrs(){return akses.kontakrs;}
     public static String getemailrs(){return akses.emailrs;}
+    public static String getkodeppkbpjs(){return akses.kode_ppk;}
     public static boolean getkunjungan_ralan(){return akses.kunjungan_ralan;}
     public static boolean getrl32(){return akses.rl32;}
     public static boolean getrl33(){return akses.rl33;}
@@ -3449,6 +3480,7 @@ public final class akses {
     public static boolean getpermintaan_lab(){return akses.permintaan_lab;}
     public static void setperiksalabfalse(){akses.periksa_lab=false;} 
     public static void setperiksalabpafalse(){akses.pemeriksaan_lab_pa=false;} 
+    public static void setperiksalabmbfalse(){akses.pemeriksaan_lab_mb=false;} 
     public static void setpermintaanlabfalse(){akses.permintaan_lab=false;} 
     public static boolean getpermintaan_radiologi(){return akses.permintaan_radiologi;}
     public static void setperiksaradiologifalse(){akses.periksa_radiologi=false;} 
@@ -4021,4 +4053,13 @@ public final class akses {
     public static boolean getpenilaian_korban_kekerasan(){return akses.penilaian_korban_kekerasan;}
     public static boolean getpenilaian_lanjutan_resiko_jatuh_lansia(){return akses.penilaian_lanjutan_resiko_jatuh_lansia;}
     public static boolean getmpp_skrining(){return akses.mpp_skrining;}
+    public static boolean getpenilaian_pasien_penyakit_menular(){return akses.penilaian_pasien_penyakit_menular;}
+    public static boolean getedukasi_pasien_keluarga_rj(){return akses.edukasi_pasien_keluarga_rj;}
+    public static boolean getpemantauan_pews_dewasa(){return akses.pemantauan_pews_dewasa;}
+    public static boolean getpenilaian_tambahan_bunuh_diri(){return akses.penilaian_tambahan_bunuh_diri;}
+    public static boolean getbpjs_antrean_pertanggal(){return akses.bpjs_antrean_pertanggal;}
+    public static boolean getpenilaian_tambahan_perilaku_kekerasan(){return akses.penilaian_tambahan_perilaku_kekerasan;}
+    public static boolean getpenilaian_tambahan_beresiko_melarikan_diri(){return akses.penilaian_tambahan_beresiko_melarikan_diri;}
+    public static boolean getpersetujuan_penundaan_pelayanan(){return akses.persetujuan_penundaan_pelayanan;}
+    public static boolean getsisa_diet_pasien(){return akses.sisa_diet_pasien;}
 }   
